@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +51,15 @@
     <Compile Include="csharp\Problem03.cs" />
     <Compile Include="csharp\Problem04.cs" />
     <Compile Include="csharp\Problem05.cs" />
+    <Compile Include="csharp\Problem06.cs" />
+    <Compile Include="csharp\Problem07.cs" />
+    <Compile Include="csharp\Problem08.cs" />
+    <Compile Include="csharp\Problem09.cs" />
+    <Compile Include="csharp\Problem10.cs" />
+    <Compile Include="csharp\Problem11.cs" />
+    <Compile Include="csharp\Problem12.cs" />
+    <Compile Include="csharp\Problem13.cs" />
+    <Compile Include="csharp\Problem14.cs" />
     <Compile Include="Problem.cs" />
     <Compile Include="csharp\Problem01.cs" />
     <Compile Include="Program.cs" />
