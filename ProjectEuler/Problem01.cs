@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MathNet.Numerics;
+using projectEuler.Resources;
+
+namespace ProjectEuler
+{
+    /// <summary>
+    // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+    // Find the sum of all the multiples of 3 or 5 below 1000.
+
+    // Answer : 233168
+    /// </summary>
+    public class Problem01 : Problem
+    {
+
+        public long FirstAttempt(int num=999)
+        {
+            long result = 0;
+            for (long i = 1; i <= num; i++ )
+            {
+                if (i % 3 == 0 || i % 5 == 0)
+                    result += i;
+            }
+            return result;
+        }
+
+        
+
+        public long SecondAttempt(int num=999)
+        {
+            var a = Util.Sum(num, 3);
+            var b = Util.Sum(num, 5);
+            var c = Util.Sum(num, 15);
+
+            return (a + b) - c;
+        }
+
+        public long Extra(int num=999)
+        {
+            var a = Util.Sum(num, 6);
+            var b = Util.Sum(num, 7);
+            var c = Util.Sum(num, 42);
+
+            return a + b - c;
+        } 
+
+        public override Answer GetAnswer()
+        {
+            long ans = SecondAttempt();
+            return new Answer
+            {
+                NumericAnswer = ans,
+                Description = string.Format("the sum of all the multiples of 3 or 5 below 1000 = {0}",ans)
+            };
+        }
+
+
+    }
+}
