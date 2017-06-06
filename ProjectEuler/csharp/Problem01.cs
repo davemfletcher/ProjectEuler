@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MathNet.Numerics;
-using projectEuler.Resources;
+using ProjectEuler.Resources;
 
 namespace ProjectEuler
 {

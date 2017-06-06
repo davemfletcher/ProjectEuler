@@ -14,11 +14,11 @@ namespace ProjectEuler
             var stopWatch = new Stopwatch();
             stopWatch.Start();
 
-            var problem = new Problem01();
-            //            var problem = new Problem02();
-            //            var problem = new Problem03();
-            //            var problem = new Problem04();
-            //            var problem = new Problem05();
+            //var problem = new Problem01();
+            //var problem = new Problem02();
+            //var problem = new Problem03();
+            //var problem = new Problem04();
+            var problem = new Problem05();
             //            var problem = new Problem06();
             //            var problem = new Problem07();
             //            var problem = new Problem08();

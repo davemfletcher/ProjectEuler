@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace projectEuler.Resources
+namespace ProjectEuler.Resources
 {
     public static class Util
     {
