@@ -16,7 +16,7 @@ namespace ProjectEuler
     {
         /// <summary>
         /// Start with 2 (1 is not a prime) increment in odd intervals and test for a prime.
-        /// 9,000,000 ticks to complete
+        /// 9,000,000 ticks to complete 
         /// </summary>
         /// <param name="max"></param>
         /// <returns></returns>
