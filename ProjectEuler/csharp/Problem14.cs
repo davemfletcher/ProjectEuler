@@ -22,16 +22,16 @@ namespace ProjectEuler
 
         NOTE: Once the chain starts the terms are allowed to go above one million.
 
-     * Answer: 837799
+     * Answer: 837799 
      */
-    public class Problem14 : Problem
+    public class Problem14 : IProblem
     {
         private const int Limit = 1000000;
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
 //            var answer = SecondAttempt();
-            var answer = FirstAttempt();
+            var answer = FirstAttempt(Limit);
             return new Answer
             {
                 NumericAnswer = answer,
@@ -39,20 +39,16 @@ namespace ProjectEuler
             };
         }
 
-//        private long SecondAttempt()
-//        {
-//
-//        }
-
         /// <summary>
-        /// First mistake was using a int instead of a long for v. Didn't expect the compute to overflow, but it did on i=113383, the tree grew 120 nodes and overflowed when computing v = 827370449 (odd number compute).
+        /// Func are great, this is a reminder to start using them more. First mistake was using a int instead of a long for v. Didn't expect the compute to overflow, but it did on i=113383, the tree grew 120 nodes and overflowed. The `checked` keyword will throw an exception on overflow.
         /// </summary>
         /// <returns></returns>
-        private double FirstAttempt()
+        private Func<int, double> FirstAttempt = limit =>
         {
+            // Time: 3098 Elapsed milliSeconds
             var largestNumberOfTerms = 0;
-            var term = 0;
-            for (int i = 5; i < Limit; i++)
+            double term = 0;
+            for (int i = 5; i < limit; i++)
             {
                 var terms = 1;
                 long v = i;
@@ -66,6 +62,17 @@ namespace ProjectEuler
                 term = i;
             }
             return term;
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <seealso cref="http://www.mathblog.dk/project-euler-14/"/>
+        /// <returns></returns>
+        private double SecondAttempt(int limit = Limit)
+        {
+            return 0;
         }
     }
 }

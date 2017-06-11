@@ -7,11 +7,12 @@ namespace ProjectEuler
 {
     public abstract class Problem
     {
-        protected Answer Answer { get; set; }
+        //protected Answer Answer { get; set; }
+
         public abstract Answer GetAnswer();
-        public override string ToString()
-        {
-            return Answer.Description;
-        }
+        //public override string ToString()
+        //{
+        //    return Answer.Description;
+        //}
     }
 }
