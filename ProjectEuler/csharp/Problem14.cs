@@ -31,7 +31,7 @@ namespace ProjectEuler
         public Answer GetAnswer()
         {
 //            var answer = SecondAttempt();
-            var answer = FirstAttempt(Limit);
+            var answer = SecondAttempt(Limit);
             return new Answer
             {
                 NumericAnswer = answer,
@@ -47,8 +47,8 @@ namespace ProjectEuler
         {
             // Time: 3098 Elapsed milliSeconds
             var largestNumberOfTerms = 0;
-            double term = 0;
-            for (int i = 5; i < limit; i++)
+            double numWithMostTerms = 0;
+            for (int i = 5; i < limit;  i++)
             {
                 var terms = 1;
                 long v = i;
@@ -59,20 +59,46 @@ namespace ProjectEuler
                 }
                 if (terms <= largestNumberOfTerms) continue;
                 largestNumberOfTerms = terms;
-                term = i;
+                numWithMostTerms = i;
             }
-            return term;
+            return numWithMostTerms;
         };
 
         /// <summary>
-        /// 
+        /// Cache the terms
         /// </summary>
         /// <param name="limit"></param>
         /// <seealso cref="http://www.mathblog.dk/project-euler-14/"/>
         /// <returns></returns>
         private double SecondAttempt(int limit = Limit)
         {
-            return 0;
+            // Time: 300 Elapsed milliSeconds
+            var largestNumberOfTerms = 0;
+            int[] cache = new int[limit];
+            double numWithMostTerms = 0;
+            cache[1] = 1;
+
+            for (int i = 2; i < limit; i++)
+            {
+                cache[i] = 1;
+                var terms = 0;
+                long v = i;
+                while (v > 1)
+                {
+                    if(v < i)
+                    {
+                        terms += cache[v];
+                        break;
+                    }
+                    v = v % 2 == 0 ? v / 2 : checked(v * 3 + 1);
+                    terms++;
+                }
+                cache[i] = terms; 
+                if (terms <= largestNumberOfTerms) continue;
+                largestNumberOfTerms = terms;
+                numWithMostTerms = i;
+            }
+            return numWithMostTerms;
         }
     }
 }
