@@ -16,11 +16,12 @@ namespace ProjectEuler
     /// Answer is 5537376230
     /// </summary>
 
-    class Problem13 : Problem
+    class Problem13 : IProblem
     {
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
-            // 27, 000 ticks
+            // 13 Elapsed milliSeconds
+            // 36277 ticks
             Func<StreamReader, string> myFunc = sr =>
             {
                 var result = new BigInteger();
@@ -34,7 +35,7 @@ namespace ProjectEuler
 
             return new Answer
             {
-                Description = Util.ReadEmbeddedFile("projectEuler.Resources.PeData13.txt", myFunc)
+                Description = Util.ReadEmbeddedFile("ProjectEuler.Resources.PeData13.txt", myFunc)
             };
         }
 

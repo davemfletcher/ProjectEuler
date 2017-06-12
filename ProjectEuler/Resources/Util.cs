@@ -149,13 +149,16 @@ namespace ProjectEuler.Resources
         /// <returns>file content</returns>
         public static string ReadEmbeddedFile(string fileName, Func<StreamReader, string> myFunc = null)
         {
+            var resourceNames = Assembly.GetCallingAssembly().GetManifestResourceNames();
+            if(!resourceNames.Contains(fileName))
+                throw new ArgumentException(string.Format("Could not resolve fileName {0} in the manifest Resources: {1}", fileName, string.Join(",", resourceNames)));
+
+
             Assembly assembly = Assembly.GetCallingAssembly();
             using (Stream stream = assembly.GetManifestResourceStream(fileName))
             {
                 if (stream == null)
-                {
                     throw new ArgumentException(string.Format("Could not resolve fileName {0}", fileName));
-                }
                 using (var reader = new StreamReader(stream))
                 {
                     if(myFunc == null)

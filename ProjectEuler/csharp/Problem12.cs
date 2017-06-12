@@ -30,10 +30,10 @@ namespace projectEuler
     // Answer is 76576500
     /// </summary>
 
-    public class Problem12 : Problem
+    public class Problem12 : IProblem
     {
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
             const int num = 500;
             return new Answer

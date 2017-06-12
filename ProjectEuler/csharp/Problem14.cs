@@ -30,8 +30,7 @@ namespace ProjectEuler
 
         public Answer GetAnswer()
         {
-//            var answer = SecondAttempt();
-            var answer = SecondAttempt(Limit);
+            var answer = FirstAttempt(Limit);
             return new Answer
             {
                 NumericAnswer = answer,
@@ -45,7 +44,8 @@ namespace ProjectEuler
         /// <returns></returns>
         private Func<int, double> FirstAttempt = limit =>
         {
-            // Time: 3098 Elapsed milliSeconds
+            // 3263 Elapsed milliSeconds
+            // 8949113 ticks
             var largestNumberOfTerms = 0;
             double numWithMostTerms = 0;
             for (int i = 5; i < limit;  i++)
@@ -68,11 +68,11 @@ namespace ProjectEuler
         /// Cache the terms
         /// </summary>
         /// <param name="limit"></param>
-        /// <seealso cref="http://www.mathblog.dk/project-euler-14/"/>
         /// <returns></returns>
         private double SecondAttempt(int limit = Limit)
         {
-            // Time: 300 Elapsed milliSeconds
+            // 178 Elapsed milliSeconds
+            // 489804 ticks
             var largestNumberOfTerms = 0;
             int[] cache = new int[limit];
             double numWithMostTerms = 0;
