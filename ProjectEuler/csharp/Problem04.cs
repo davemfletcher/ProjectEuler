@@ -10,7 +10,7 @@ namespace ProjectEuler
     /// 
     /// Answer is 906609
     /// </summary>
-    class Problem04 :Problem
+    class Problem04 : IProblem
     {
         /// <summary>
         /// Highest palindrome, therefore start with the highest numbers and iterate down
@@ -51,7 +51,7 @@ namespace ProjectEuler
 //            return true;
         }
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
             return new Answer
             {

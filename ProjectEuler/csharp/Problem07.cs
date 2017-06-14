@@ -21,7 +21,7 @@ namespace ProjectEuler
      * ======
      * prime number: 104743 for 10001st prime
      */
-    public class Problem07 : Problem
+    public class Problem07 : IProblem
     {
         /// <summary>
         /// 6.48 seconds to complete or 64916449 ticks
@@ -54,7 +54,7 @@ namespace ProjectEuler
             return num;
         }
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
             const int num = 10001;
             return new Answer  

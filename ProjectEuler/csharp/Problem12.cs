@@ -84,7 +84,7 @@ namespace ProjectEuler
 
 
         /// <summary>
-        /// using prime numbers for divisors speeds up compute by half. Nssty having to guess the number of primes to use though, I could try log log N.
+        /// using prime numbers for divisors speeds up compute by half. Nssty having to guess the number of primes to use though. Among a 10 digit number there is approx 4% primes
         /// Time: 2114 Elapsed milliSeconds, 5797187 ticks
         /// </summary>
         /// <param name="nthTriangle"></param>

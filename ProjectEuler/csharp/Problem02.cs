@@ -15,7 +15,7 @@ namespace ProjectEuler
 
     /// By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
     /// </summary>
-    public class Problem02 : Problem
+    public class Problem02 : IProblem
     {
         private const int Limit = 4000000;
 
@@ -78,7 +78,7 @@ namespace ProjectEuler
             return total;
         }
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
             return new Answer
             {

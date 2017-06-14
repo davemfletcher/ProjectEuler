@@ -15,7 +15,7 @@ namespace ProjectEuler
     /// ======
     /// 
     /// </summary>
-    class Problem05: Problem
+    class Problem05: IProblem
     {
     
         /// <summary>
@@ -99,7 +99,7 @@ namespace ProjectEuler
         }
   
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
 //            int num = 232750000;
             return new Answer

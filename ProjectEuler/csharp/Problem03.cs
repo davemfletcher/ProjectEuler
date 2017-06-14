@@ -18,7 +18,7 @@ namespace ProjectEuler
     /// 87625999 is not a prime number, factors are: 1471 (is a prime) * 59569
     /// could use sieve of Eratosthenes
     /// </summary>
-    class Problem03 : Problem
+    class Problem03 : IProblem
     {
         /// <summary>
         /// 2227 ticks to run
@@ -49,7 +49,7 @@ namespace ProjectEuler
             return primeNumbers.FirstOrDefault(primeNumber => num%primeNumber == 0);
         }
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
             const long limit = 600851475143;
             return new Answer

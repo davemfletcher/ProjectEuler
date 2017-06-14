@@ -14,7 +14,7 @@ namespace ProjectEuler
 
     // Answer : 233168
     /// </summary>
-    public class Problem01 : Problem
+    public class Problem01 : IProblem
     {
 
         public long FirstAttempt(int num=999)
@@ -48,7 +48,7 @@ namespace ProjectEuler
             return a + b - c;
         } 
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
             long ans = SecondAttempt();
             return new Answer

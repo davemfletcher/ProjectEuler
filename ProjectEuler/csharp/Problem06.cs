@@ -20,15 +20,17 @@ namespace ProjectEuler
     /// ======
     /// //answer = 25164150
     /// </summary>
-    class Problem06 : Problem
+    class Problem06 : IProblem
     {
+        const long Limit = 100;
         /// <summary>
         /// to sum use Nth triangle, it is the addition version of factorial
-        /// For limit = 100,000 - ticks = 102K
+        /// Time: 2 Elapsed milliSeconds, 7758 ticks
+        /// Limit = 1000,000 Time: 83 Elapsed milliSeconds, 228,222 ticks
         /// </summary>
         /// <param name="limit"></param>
         /// <returns></returns>
-        private long FirstAttempt(long limit = 100)
+        private long FirstAttempt(long limit = Limit)
         {
             var squareOfSums = (long) Math.Pow(Util.NthTriangle(limit), 2);
 
@@ -42,12 +44,13 @@ namespace ProjectEuler
         }
 
         /// <summary>
-        /// TODO wrong answer with this attempt
-        /// For limit = 100,000 - ticks = 10K
+        /// A formula for sum of squares
+        /// Limit = 1000,000 Time: 1 Elapsed milliSeconds, 4,299 ticks
         /// </summary>
         /// <param name="limit"></param>
+        /// <seealso cref="http://www.mathblog.dk/project-euler-problem-6/"/>
         /// <returns></returns>
-        private long SecondAttempt(long limit = 100)
+        private long SecondAttempt(long limit = Limit)
         {
             var squareOfSums = (long)Math.Pow(Util.NthTriangle(limit), 2);
             var sumOfSquares = SquareOfSums(limit);
@@ -55,17 +58,18 @@ namespace ProjectEuler
             return (long)(squareOfSums - sumOfSquares);
         }
 
-        private long SquareOfSums(long limit=100)
+        private long SquareOfSums(long n=Limit)
         {
-            long result = (((2*limit + 1)*(limit + 1))/limit)/6;
+            long result =
+                (n * (n + 1) * (2 * n + 1)) / 6;
             return result;
         }
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
             return new Answer
             {
-                Description = string.Format("{0}", SecondAttempt())
+                Description = string.Format("{0}", SecondAttempt(1000000))
             };
         }
             
