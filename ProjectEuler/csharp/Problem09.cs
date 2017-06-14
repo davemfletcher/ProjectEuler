@@ -19,7 +19,7 @@ namespace ProjectEuler
      *          a*a + b*b = c*c AND a+b+c=1000
      * a=200, b=375, c=425
      */
-    class Problem09 : Problem
+    class Problem09 : IProblem
     {
         /// <summary>
         /// The most straightforward approach is to simply loop over a and b and then check
@@ -89,7 +89,7 @@ namespace ProjectEuler
             return a*b*c;
         }
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
             return new Answer()
             {

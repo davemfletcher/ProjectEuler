@@ -39,7 +39,7 @@ namespace ProjectEuler
         }
 
         /// <summary>
-        /// Func are great, this is a reminder to start using them more. First mistake was using a int instead of a long for v. Didn't expect the compute to overflow, but it did on i=113383, the tree grew 120 nodes and overflowed. The `checked` keyword will throw an exception on overflow.
+        /// Func are great, this is a reminder to start using them more. First mistake was using a int instead of a long for v. Didn't expect the compute to overflow, but it did on i=113383, the tree grew up 120 nodes and overflowed the int.max. The `checked` keyword will throw an exception on overflow.
         /// </summary>
         /// <returns></returns>
         private Func<int, double> FirstAttempt = limit =>
@@ -65,7 +65,7 @@ namespace ProjectEuler
         };
 
         /// <summary>
-        /// Cache the terms
+        /// Cache the terms. When the calculated variable dips below the starting value the cache should know how many steps to home base.
         /// </summary>
         /// <param name="limit"></param>
         /// <returns></returns>

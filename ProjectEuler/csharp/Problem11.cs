@@ -37,7 +37,7 @@ namespace ProjectEuler
     // Answer = 70600674 in 22385 ticks
     // ======
     /// </summary>
-    public class Problem11 : Problem
+    public class Problem11 : IProblem
     {
         private readonly int[,] _array;
         public Problem11()
@@ -150,7 +150,7 @@ namespace ProjectEuler
         }
 
 
-        public override Answer GetAnswer()
+        public Answer GetAnswer()
         {
             long horiz, leftToRightDown, leftToRightUp;
             long vert = horiz = leftToRightDown = leftToRightUp = 0;

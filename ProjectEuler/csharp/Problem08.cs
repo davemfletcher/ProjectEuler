@@ -46,7 +46,6 @@ namespace ProjectEuler
 
             }
 
-           //todo use Linq?
 //            source.ToList().ForEach(Console.WriteLine);
 //            Console.WriteLine("highest score " + highestScore + " - start pos - " + startPos + " - " + source[startPos] + source[startPos + 1] + source[startPos + 2] + source[startPos + 3] + source[startPos + 4] + source[startPos + 5] + source[startPos + 6] + source[startPos + 7] + source[startPos + 8] + source[startPos + 9]);
 
