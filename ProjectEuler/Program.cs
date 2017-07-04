@@ -19,7 +19,7 @@ namespace ProjectEuler
             //var problem = new Problem03();
             //var problem = new Problem04();
             //var problem = new Problem05();
-            var problem = new Problem06();
+            //var problem = new Problem06();
             //var problem = new Problem07();
             //var problem = new Problem08();
             //var problem = new Problem09();
@@ -28,6 +28,7 @@ namespace ProjectEuler
             //var problem = new Problem12();
             //var problem = new Problem13();
             //var problem = new Problem14();
+            var problem = new Problem15();
 
             var answer = problem.GetAnswer();
             stopWatch.Stop();
