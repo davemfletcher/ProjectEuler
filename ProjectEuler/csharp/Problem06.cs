@@ -2,10 +2,11 @@
 using System;
 using ProjectEuler.Resources;
 
-namespace ProjectEuler
+namespace ProjectEuler.csharp
 {
 
     /// <summary>
+    /// <see cref="https://projecteuler.net/problem=06"/> 
     /// The sum of the squares of the first ten natural numbers is,
 
     /// 1^2 + 2^2 + ... + 10^2 = 385
@@ -65,7 +66,7 @@ namespace ProjectEuler
             return result;
         }
 
-        public Answer GetAnswer()
+        public Answer Solution()
         {
             return new Answer
             {

@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using MathNet.Numerics;
 
-namespace ProjectEuler
+namespace ProjectEuler.csharp
 {
-    /*
+
+    /* <see cref="https://projecteuler.net/problem=14"/>
      * The following iterative sequence is defined for the set of positive integers:
 
             n → n/2 (n is even)
@@ -28,7 +29,7 @@ namespace ProjectEuler
     {
         private const int Limit = 1000000;
 
-        public Answer GetAnswer()
+        public Answer Solution()
         {
             var answer = FirstAttempt(Limit);
             return new Answer

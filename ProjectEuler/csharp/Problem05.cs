@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjectEuler.Resources;
 
-namespace ProjectEuler
+namespace ProjectEuler.csharp
 {
     /// <summary>
+    /// <see cref="https://projecteuler.net/problem=05"/> 
     /// 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
     /// What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
     /// 
@@ -15,7 +16,7 @@ namespace ProjectEuler
     /// ======
     /// 
     /// </summary>
-    class Problem05: IProblem
+    class Problem05 : IProblem
     {
     
         /// <summary>
@@ -99,7 +100,7 @@ namespace ProjectEuler
         }
   
 
-        public Answer GetAnswer()
+        public Answer Solution()
         {
 //            int num = 232750000;
             return new Answer

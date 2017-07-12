@@ -32,7 +32,7 @@ namespace ProjectEuler
             //var problem = new Problem15();
             var problem = new Problem16();
 
-            var answer = problem.GetAnswer();
+            var answer = problem.Solution();
             stopWatch.Stop();
 
             Console.WriteLine(problem.GetType().Name + @" = " + answer.Description);

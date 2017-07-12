@@ -1,8 +1,9 @@
 ﻿using System.Linq;
 
-namespace ProjectEuler
+namespace ProjectEuler.csharp
 {
     /// <summary>
+    /// <see cref="https://projecteuler.net/problem=04"/> 
     /// A palindromic number reads the same both ways. 
     /// The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 
@@ -51,7 +52,7 @@ namespace ProjectEuler
 //            return true;
         }
 
-        public Answer GetAnswer()
+        public Answer Solution()
         {
             return new Answer
             {

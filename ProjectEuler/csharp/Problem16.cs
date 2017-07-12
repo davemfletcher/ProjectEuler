@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace ProjectEuler.csharp
 {
     /// <summary>
+    /// <see cref="https://projecteuler.net/problem=16"/>
     /// 2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
 
     /// What is the sum of the digits of the number 2^1000?
@@ -18,7 +19,7 @@ namespace ProjectEuler.csharp
     public class Problem16 : IProblem
     {
         private const int _power = 1000;
-        public Answer GetAnswer()
+        public Answer Solution()
         {
             return new Answer
             {
@@ -45,8 +46,8 @@ namespace ProjectEuler.csharp
         /// Kudos to mathblog, shave off the lsd add it to the result and make the number smaller on the next iteration.
         /// 5 Elapsed milliSeconds
         /// 15815 ticks
-        /// </summary>
         /// <seealso cref="http://www.mathblog.dk/project-euler-16/"/>
+        /// </summary>
         /// <returns></returns>
         private double SecondAttempt()
         {
@@ -68,22 +69,4 @@ namespace ProjectEuler.csharp
             return 0;
         }
     }
-
-    // ideas for clean up
-    //public class Problem16 : IProblem
-    //{
-    //    public string Url { get; set; } = "https://projecteuler.net/problem=16";
-    //    public string Description { get; set; } = "Power digit sum";
-
-    //    [Solution("BigInteger Pow method (Linq)")]
-    //    public void Solution()
-    //    {
-    //        var result = BigInteger.Pow(2, 1000)
-    //                               .ToString()
-    //                               .Select(c => int.Parse(c.ToString()))
-    //                               .Sum();
-
-    //        Console.WriteLine(@"Result: {0}", result);
-    //    }
-    //}
 }

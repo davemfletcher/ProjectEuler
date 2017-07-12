@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler
+namespace ProjectEuler.csharp
 {
-    /* A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+    /* <see cref="https://projecteuler.net/problem=09"/>
+     * A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
 
         a*a + b*b = c*c
         For example, 3*3 + 4*4 = 9 + 16 = sqrt(25) = 5.
@@ -89,7 +90,7 @@ namespace ProjectEuler
             return a*b*c;
         }
 
-        public Answer GetAnswer()
+        public Answer Solution()
         {
             return new Answer()
             {

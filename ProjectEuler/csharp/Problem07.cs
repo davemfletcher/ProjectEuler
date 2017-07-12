@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using ProjectEuler.Resources;
 
-namespace ProjectEuler
+namespace ProjectEuler.csharp
 {
-    /*
-     By listing the first six prime numbers: 2,3,5,7,11, and 13, we can see that the 6th prime is 13. What is the 1001st 
+    /* <see cref="https://projecteuler.net/problem=07"/> 
+     * By listing the first six prime numbers: 2,3,5,7,11, and 13, we can see that the 6th prime is 13. What is the 1001st 
      * 1 is not a prime
      * All primes except 2 are odd
      * All primes >3 can be written in the form (6k +/- 1) - If k is an integer this test can determine if it is a prime. 
@@ -54,7 +54,7 @@ namespace ProjectEuler
             return num;
         }
 
-        public Answer GetAnswer()
+        public Answer Solution()
         {
             const int num = 10001;
             return new Answer  

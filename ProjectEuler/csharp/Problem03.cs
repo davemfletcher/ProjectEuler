@@ -2,9 +2,10 @@
 using System.Linq;
 using ProjectEuler.Resources;
 
-namespace ProjectEuler
+namespace ProjectEuler.csharp
 {
     /// <summary>
+    /// <see cref="https://projecteuler.net/problem=03"/> 
     /// The prime factors of 13195 are 5, 7, 13 and 29.
 
     /// What is the largest prime factor of the number 600851475143 ?
@@ -49,7 +50,7 @@ namespace ProjectEuler
             return primeNumbers.FirstOrDefault(primeNumber => num%primeNumber == 0);
         }
 
-        public Answer GetAnswer()
+        public Answer Solution()
         {
             const long limit = 600851475143;
             return new Answer

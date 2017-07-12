@@ -8,9 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using ProjectEuler.Resources;
 
-namespace ProjectEuler
+namespace ProjectEuler.csharp
 {
     /// <summary>
+    /// <see cref="https://projecteuler.net/problem=13"/>
     /// Work out the first ten digits of the sum of the attached one-hundred50-digit numbers.
     /// 
     /// Answer is 5537376230
@@ -18,7 +19,7 @@ namespace ProjectEuler
 
     class Problem13 : IProblem
     {
-        public Answer GetAnswer()
+        public Answer Solution()
         {
             // 13 Elapsed milliSeconds
             // 36277 ticks
