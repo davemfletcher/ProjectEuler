@@ -1,0 +1,63 @@
+﻿using System;
+using static System.Console;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProjectEuler.csharp
+{
+    /// <summary>
+    /// 2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+
+    /// What is the sum of the digits of the number 2^1000?
+    /// 
+    /// Answer = 1366
+    /// </summary>
+    public class Problem16 : IProblem
+    {
+        private const int _power = 1000;
+        public Answer GetAnswer()
+        {
+            return new Answer
+            {
+                Description = $"Answer is {SecondAttempt()}"
+            };
+        }
+
+        /// <summary>
+        /// BigInteger to the rescue, convert integer into an array via a string and back to individual ints before calling the sum function.
+        /// 22 Elapsed milliSeconds
+        /// 62559 ticks
+        /// </summary>
+        /// <param name="power"></param>
+        /// <returns></returns>
+        private double FirstAttempt(int power = _power)
+        {
+            var value = (BigInteger) Math.Pow(2, power);
+            var intArray = value.ToString().Select(o => (int)char.GetNumericValue(o)).ToArray();
+            return intArray.Sum();
+
+        }
+
+        /// <summary>
+        /// Kudos to mathblog, shave off the lsd add it to the result and make the number smaller on the next iteration.
+        /// </summary>
+        /// <seealso cref="http://www.mathblog.dk/project-euler-16/"/>
+        /// <returns></returns>
+        private double SecondAttempt()
+        {
+            int result = 0;
+
+            BigInteger number = BigInteger.Pow(2, 15);
+
+            while (number > 0)
+            {
+                result += (int)(number % 10);
+                number /= 10;
+            }
+            return result;
+        }
+    }
+}

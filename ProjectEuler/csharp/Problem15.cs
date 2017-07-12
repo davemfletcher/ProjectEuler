@@ -46,7 +46,11 @@ namespace ProjectEuler
             return grid[0, 0];
         }
 
-
+        /// <summary>
+        ///  multiplicative formula
+        /// </summary>
+        /// <param name="gridSize"></param>
+        /// <returns></returns>
         private double SecondAttempt(int gridSize = Grid)
         {
             long paths = 1;
