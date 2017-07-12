@@ -168,5 +168,6 @@ namespace ProjectEuler.Resources
                 }
             }
         }
+
     }
 }

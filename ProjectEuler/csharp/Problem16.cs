@@ -22,7 +22,7 @@ namespace ProjectEuler.csharp
         {
             return new Answer
             {
-                Description = $"Answer is {SecondAttempt()}"
+                Description = $"Answer is {FirstAttempt()}"
             };
         }
 
@@ -35,7 +35,7 @@ namespace ProjectEuler.csharp
         /// <returns></returns>
         private double FirstAttempt(int power = _power)
         {
-            var value = (BigInteger) Math.Pow(2, power);
+            var value = BigInteger.Pow(2, power);
             var intArray = value.ToString().Select(o => (int)char.GetNumericValue(o)).ToArray();
             return intArray.Sum();
 
@@ -43,6 +43,8 @@ namespace ProjectEuler.csharp
 
         /// <summary>
         /// Kudos to mathblog, shave off the lsd add it to the result and make the number smaller on the next iteration.
+        /// 5 Elapsed milliSeconds
+        /// 15815 ticks
         /// </summary>
         /// <seealso cref="http://www.mathblog.dk/project-euler-16/"/>
         /// <returns></returns>
@@ -59,5 +61,29 @@ namespace ProjectEuler.csharp
             }
             return result;
         }
+
+        private double ThridAttempt()
+        {
+
+            return 0;
+        }
     }
+
+    // ideas for clean up
+    //public class Problem16 : IProblem
+    //{
+    //    public string Url { get; set; } = "https://projecteuler.net/problem=16";
+    //    public string Description { get; set; } = "Power digit sum";
+
+    //    [Solution("BigInteger Pow method (Linq)")]
+    //    public void Solution()
+    //    {
+    //        var result = BigInteger.Pow(2, 1000)
+    //                               .ToString()
+    //                               .Select(c => int.Parse(c.ToString()))
+    //                               .Sum();
+
+    //        Console.WriteLine(@"Result: {0}", result);
+    //    }
+    //}
 }
