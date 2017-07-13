@@ -8,9 +8,6 @@ namespace ProjectEuler
 {
     public interface IProblem
     {
-        //string Url { get; set; }
-        //string Description { get; set; }
-
         Answer Solution();
     }
 }

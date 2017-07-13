@@ -62,11 +62,5 @@ namespace ProjectEuler.csharp
             }
             return result;
         }
-
-        private double ThridAttempt()
-        {
-
-            return 0;
-        }
     }
 }
