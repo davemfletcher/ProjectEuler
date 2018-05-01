@@ -17,11 +17,11 @@ namespace ProjectEuler.csharp
     /// 6857; has no prime factors it is a prime number
     /// 6857 * 87625999 = 600851475143
     /// 87625999 is not a prime number, factors are: 1471 (is a prime) * 59569
-    /// could use sieve of Eratosthenes
     /// </summary>
     class Problem03 : IProblem
     {
         /// <summary>
+        /// 
         /// 2227 ticks to run
         /// </summary>
         /// <param name="num"></param>

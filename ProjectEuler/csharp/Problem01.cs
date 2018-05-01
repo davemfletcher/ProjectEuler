@@ -47,10 +47,30 @@ namespace ProjectEuler.csharp
             var c = Util.Sum(num, 42);
 
             return a + b - c;
-        } 
+        }
+
+        private static void FizzBuzz(int limit=100)
+        {
+            for (int i = 0; i <= limit; i++)
+            {
+                var output = "";
+                if(i%3==0 && i%5==0)
+                    output = "FizzBuzz";
+                else if(i%3==0)
+                    output = "Fizz";
+                else if(i%5==0)
+                    output = "Buzz";
+                else
+                    output = i.ToString();
+
+                Console.WriteLine(output);
+            }
+
+        }
 
         public Answer Solution()
         {
+            FizzBuzz();
             long ans = SecondAttempt();
             return new Answer
             {

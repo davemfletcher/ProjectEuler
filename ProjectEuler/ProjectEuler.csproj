@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -62,6 +63,7 @@
     <Compile Include="csharp\Problem14.cs" />
     <Compile Include="csharp\Problem15.cs" />
     <Compile Include="csharp\Problem16.cs" />
+    <Compile Include="csharp\Problem17.cs" />
     <Compile Include="IProblem.cs" />
     <Compile Include="Problem.cs" />
     <Compile Include="csharp\Problem01.cs" />
