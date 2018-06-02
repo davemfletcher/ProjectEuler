@@ -29,9 +29,8 @@ namespace ProjectEuler.csharp
             return result;
         }
 
-        
 
-        public long SecondAttempt(int num=999)
+        private long SecondAttempt(int num=999)
         {
             var a = Util.Sum(num, 3);
             var b = Util.Sum(num, 5);
@@ -49,33 +48,14 @@ namespace ProjectEuler.csharp
             return a + b - c;
         }
 
-        private static void FizzBuzz(int limit=100)
-        {
-            for (int i = 0; i <= limit; i++)
-            {
-                var output = "";
-                if(i%3==0 && i%5==0)
-                    output = "FizzBuzz";
-                else if(i%3==0)
-                    output = "Fizz";
-                else if(i%5==0)
-                    output = "Buzz";
-                else
-                    output = i.ToString();
-
-                Console.WriteLine(output);
-            }
-
-        }
 
         public Answer Solution()
         {
-            FizzBuzz();
             long ans = SecondAttempt();
             return new Answer
             {
                 NumericAnswer = ans,
-                Description = string.Format("the sum of all the multiples of 3 or 5 below 1000 = {0}",ans)
+                Description = $"the sum of all the multiples of 3 or 5 below 1000 = {ans}"
             };
         }
 

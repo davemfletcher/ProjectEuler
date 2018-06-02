@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Answer.cs" />
+    <Compile Include="csharp\FizzBuzz.cs" />
     <Compile Include="csharp\Problem02.cs" />
     <Compile Include="csharp\Problem03.cs" />
     <Compile Include="csharp\Problem04.cs" />

@@ -15,8 +15,10 @@ namespace ProjectEuler
             var stopWatch = new Stopwatch();
             stopWatch.Start();
 
+            var problem = new FizzBuzz();
+
             //var problem = new Problem01();
-            var problem = new Problem02();
+            //var problem = new Problem02();
             //var problem = new Problem03();
             //var problem = new Problem04();
             //var problem = new Problem05();

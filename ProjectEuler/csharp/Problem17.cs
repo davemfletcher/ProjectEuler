@@ -26,93 +26,17 @@ namespace ProjectEuler.csharp
 
         private string FirstAttempt()
         {
-            DateTime birthday = DateTime.ParseExact("20/11/2017", "dd/MM/yyyy", null);
-            string sReturn = "??y"; ;
-            string strMeasure = string.Empty;
-            //string strAge = string.Empty;
+ 
+    
 
-            if (!string.IsNullOrEmpty(sReturn))
-            {
-
-                //DateTime birthday = DateTime.ParseExact(strDOB, "dd/MM/yyyy", null);
-                strMeasure = "y";
-                DateTime now = DateTime.Today;
-                int age = now.Year - birthday.Year;
-                if (now < birthday.AddYears(age))
-                    sReturn = age--.ToString() + "y";
-                if (age == 0)
-                {
-                    var days = now.Subtract(birthday).Days;
-                    if (days > 31)
-                    {
-                        //use months
-                        int months = (int)(Math.Floor((float)days / (365.25 / 12.0)));
-                        sReturn = months.ToString() + "m";
-                    }
-                    else if (days.Between(14, 32))
-                    {
-                        //use weeks
-                        var we = (float)days / 7;
-                        int weeks = days / 7;
-                        sReturn = weeks.ToString() + "w";
-                    }
-                    else
-                    {
-                        //use days
-                        sReturn = days.ToString() + "d";
-                    }
-                }
-            }
-
-            return sReturn;
+            return "";
         }
 
         private string SecondAttempt()
         {
-            DateTime birthday = DateTime.ParseExact("20/11/2017", "dd/MM/yyyy", null);
-            string sReturn = "??y"; ;
-            string strMeasure = string.Empty;
-            //string strAge = string.Empty;
+        
 
-            if (!string.IsNullOrEmpty(sReturn))
-            {
-
-                //DateTime birthday = DateTime.ParseExact(strDOB, "dd/MM/yyyy", null);
-                strMeasure = "y";
-                DateTime now = DateTime.Today;
-                int years = now.Year - birthday.Year;
-
-                //if (now < birthday.AddYears(years))
-                //    sReturn = years--.ToString() + "y";
-
-                if (years >= 2)
-                    sReturn = years.ToString() + "y";
-                else
-                {
-                    var days = now.Subtract(birthday).Days;
-                    if (days > 90)
-                    {
-                        //use months
-                        int months = (int)(Math.Floor((float)days / (365.25 / 12.0)));
-                        sReturn = months.ToString() + "m";
-                    }
-                    else if (days.Between(14, 32))
-                    {
-                        //use weeks
-                        var we = (float)days / 7;
-                        int weeks = days / 7;
-                        sReturn = weeks.ToString() + "w";
-                    }
-                    else
-                    {
-                        //use days
-                        sReturn = days.ToString() + "d";
-                    }
-
-                }
-            }
-
-            return sReturn;
+            return "";
         }
     }
 }
