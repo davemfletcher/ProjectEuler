@@ -15,7 +15,7 @@ namespace ProjectEuler
             var stopWatch = new Stopwatch();
             stopWatch.Start();
 
-            var problem = new FizzBuzz();
+            //var problem = new FizzBuzz();
 
             //var problem = new Problem01();
             //var problem = new Problem02();
@@ -33,7 +33,7 @@ namespace ProjectEuler
             //var problem = new Problem14();
             //var problem = new Problem15();
             //var problem = new Problem16();
-            //var problem = new Problem17();
+            var problem = new Problem17();
 
             var answer = problem.Solution();
             stopWatch.Stop();
