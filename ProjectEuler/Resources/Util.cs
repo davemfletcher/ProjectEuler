@@ -147,34 +147,52 @@ namespace ProjectEuler.Resources
         /// <param name="fileName">Name of the resource to read, with full namespace qualification</param>
         /// <param name="myFunc"></param>
         /// <returns>file content</returns>
-        public static string ReadEmbeddedFile(string fileName, Func<StreamReader, string> myFunc = null)
+        public static string ReadEmbeddedFileAsString(string fileName, Func<StreamReader, string> myFunc = null)
         {
             var resourceNames = Assembly.GetCallingAssembly().GetManifestResourceNames();
             if(!resourceNames.Contains(fileName))
-                throw new ArgumentException(string.Format("Could not resolve fileName {0} in the manifest Resources: {1}", fileName, string.Join(",", resourceNames)));
-
+                throw new ArgumentException(
+                    $"Could not resolve fileName {fileName} in the manifest Resources: {string.Join(",", resourceNames)}");
 
             Assembly assembly = Assembly.GetCallingAssembly();
             using (Stream stream = assembly.GetManifestResourceStream(fileName))
             {
                 if (stream == null)
-                    throw new ArgumentException(string.Format("Could not resolve fileName {0}", fileName));
+                    throw new ArgumentException($"Could not resolve fileName {fileName}");
                 using (var reader = new StreamReader(stream))
                 {
-                    if(myFunc == null)
-                        return reader.ReadToEnd();
+                    return myFunc == null ? reader.ReadToEnd() : myFunc(reader);
+                }
+            }
+        }
 
+        public static List<T> ReadEmbeddedFileAsList<T>(string fileName, Func<StreamReader, List<T>> myFunc)
+        {
+            var resourceNames = Assembly.GetCallingAssembly().GetManifestResourceNames();
+            if (!resourceNames.Contains(fileName))
+                throw new ArgumentException(
+                    $"Could not resolve fileName {fileName} in the manifest Resources: {string.Join(",", resourceNames)}");
+
+            Assembly assembly = Assembly.GetCallingAssembly();
+            using (Stream stream = assembly.GetManifestResourceStream(fileName))
+            {
+                if (stream == null)
+                    throw new ArgumentException($"Could not resolve fileName {fileName}");
+                using (var reader = new StreamReader(stream))
+                {
                     return myFunc(reader);
                 }
             }
         }
 
-    
+
         public static bool Between(this int num, int lower, int upper, bool inclusive = false)
         {
             return inclusive
                 ? lower <= num && num <= upper
                 : lower < num && num < upper;
         }
+
+
     }
 }

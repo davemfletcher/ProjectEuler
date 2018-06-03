@@ -19,24 +19,26 @@ namespace ProjectEuler.csharp
 
     class Problem13 : IProblem
     {
+        private string MyFunc(StreamReader sr)
+        {
+            var result = new BigInteger();
+            while (!sr.EndOfStream)
+            {
+                result += BigInteger.Parse(sr.ReadLine());
+            }
+
+            return result.ToString().Substring(0, 10);
+        }
+
         public Answer Solution()
         {
             // 13 Elapsed milliSeconds
             // 36277 ticks
-            Func<StreamReader, string> myFunc = sr =>
-            {
-                var result = new BigInteger();
-                while (!sr.EndOfStream)
-                {
-                    result += BigInteger.Parse(sr.ReadLine());
-                }
 
-                return result.ToString().Substring(0, 10);
-            };
 
             return new Answer
             {
-                Description = Util.ReadEmbeddedFile("ProjectEuler.Resources.PeData13.txt", myFunc)
+                Description = Util.ReadEmbeddedFileAsString("ProjectEuler.Resources.PeData13.txt", MyFunc)
             };
         }
 

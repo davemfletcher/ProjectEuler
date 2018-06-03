@@ -84,5 +84,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\PeData13.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\PeData18.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

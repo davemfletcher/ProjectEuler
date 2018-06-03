@@ -33,7 +33,8 @@ namespace ProjectEuler
             //var problem = new Problem14();
             //var problem = new Problem15();
             //var problem = new Problem16();
-            var problem = new Problem17();
+            //var problem = new Problem17();
+            var problem = new Problem18();
 
             var answer = problem.Solution();
             stopWatch.Stop();
