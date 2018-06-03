@@ -55,9 +55,10 @@ namespace ProjectEuler.csharp
             {
                 var line = sr.ReadLine()?.Trim();
                 if (line == null) continue;
-                data.Add(line.Split(' ').Select(int.Parse).ToArray());
+                var dataline = line.Split(' ').Select(int.Parse).ToArray();
+                Array.Sort(dataline);
+                data.Add(dataline);
             }
-
             return data;
         };
 
@@ -73,7 +74,22 @@ namespace ProjectEuler.csharp
         private double FirstAttempt()
         {
             var listArray = Util.ReadEmbeddedFileAsList("ProjectEuler.Resources.PeData18.txt", _myFunc);
+            int[] ansArray = new int[listArray.Count];
 
+            ansArray[0] = listArray[0].Max();
+            for (int i = 1; i < listArray.Count; i++)
+            {
+                var n = listArray[i].Max();
+
+            }
+
+
+            //listArray.ForEach(n =>
+            //{
+            //    int i = 0;
+            //    if(n.)
+            //    ans += n.Max();
+            //});
 
             return 0;
         }
