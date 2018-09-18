@@ -55,6 +55,11 @@ namespace ProjectEuler.csharp
         private double SecondAttempt(int gridSize = Grid)
         {
             long paths = 1;
+
+            //todo use enumerable and aggregate - test??
+//            paths = Enumerable.Range(0, gridSize - 1).Aggregate(1, (total, next) =>
+//                (total / (2 * gridSize) - next) / next +1 );
+
             for(int i=0; i< gridSize; i++)
             {
                 paths *= (2 * gridSize) - i;

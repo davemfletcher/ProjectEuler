@@ -96,7 +96,9 @@ namespace ProjectEuler.csharp
                     }
                 }
             }
-            return primes.Zip(primeFactors, (x, y) => (long)Math.Pow(x, y)).Aggregate((a, b) => a * b);
+            return primes.Zip(primeFactors, 
+                (p, pf) => (long)Math.Pow(p, pf))
+                .Aggregate((a, b) => a * b);
         }
   
 
