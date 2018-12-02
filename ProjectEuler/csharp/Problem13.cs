@@ -12,7 +12,7 @@ namespace ProjectEuler.csharp
 {
     /// <summary>
     /// <see cref="https://projecteuler.net/problem=13"/>
-    /// Work out the first ten digits of the sum of the attached one-hundred50-digit numbers.
+    /// Work out the first ten digits of the sum of the attached one-hundred 50-digit numbers.
     /// 
     /// Answer is 5537376230
     /// </summary>
@@ -38,7 +38,7 @@ namespace ProjectEuler.csharp
 
             return new Answer
             {
-                Description = Util.ReadEmbeddedFileAsString("ProjectEuler.Resources.PeData13.txt", MyFunc)
+                Description = Util.ReadEmbeddedFile("ProjectEuler.Resources.PeData13.txt", MyFunc)
             };
         }
 

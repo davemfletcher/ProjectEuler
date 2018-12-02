@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProjectEuler.adventOfCode._2018;
 
 namespace ProjectEuler
 {
@@ -13,28 +14,34 @@ namespace ProjectEuler
         static void Main(string[] args)
         {
             var stopWatch = new Stopwatch();
+            IProblem problem;
             stopWatch.Start();
 
             //var problem = new FizzBuzz();
+            problem = new Day01();
+            
+            #region Euler
 
-            //var problem = new Problem01();
-            //var problem = new Problem02();
-            //var problem = new Problem03();
-            //var problem = new Problem04();
-            //var problem = new Problem05();
-            //var problem = new Problem06();
-            //var problem = new Problem07();
-            //var problem = new Problem08();
-            //var problem = new Problem09();
-            //var problem = new Problem10();
-            //var problem = new Problem11();
-            //var problem = new Problem12();
-            //var problem = new Problem13();
-            //var problem = new Problem14();
-            //var problem = new Problem15();
-            //var problem = new Problem16();
-            //var problem = new Problem17();
-            var problem = new Problem18();
+            //problem = new Problem01();
+            //problem = new Problem02();
+            //problem = new Problem03();
+            //problem = new Problem04();
+            //problem = new Problem05();
+            //problem = new Problem06();
+            //problem = new Problem07();
+            //problem = new Problem08();
+            //problem = new Problem09();
+            //problem = new Problem10();
+            //problem = new Problem11();
+            //problem = new Problem12();
+            //problem = new Problem13();
+            //problem = new Problem14();
+            //problem = new Problem15();
+            //problem = new Problem16();
+            //problem = new Problem17();
+//            problem = new Problem18();
+
+            #endregion
 
             var answer = problem.Solution();
             stopWatch.Stop();

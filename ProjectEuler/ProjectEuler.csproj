@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adventOfCode\2018\Day01.cs" />
     <Compile Include="Answer.cs" />
     <Compile Include="csharp\FizzBuzz.cs" />
     <Compile Include="csharp\Problem02.cs" />
@@ -86,6 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\PeData18.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Advent01.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -147,14 +147,9 @@ namespace ProjectEuler.Resources
         /// <param name="fileName">Name of the resource to read, with full namespace qualification</param>
         /// <param name="myFunc"></param>
         /// <returns>file content</returns>
-        public static string ReadEmbeddedFileAsString(string fileName, Func<StreamReader, string> myFunc = null)
+        public static string ReadEmbeddedFile(string fileName, Func<StreamReader, string> myFunc = null)
         {
-            var resourceNames = Assembly.GetCallingAssembly().GetManifestResourceNames();
-            if(!resourceNames.Contains(fileName))
-                throw new ArgumentException(
-                    $"Could not resolve fileName {fileName} in the manifest Resources: {string.Join(",", resourceNames)}");
-
-            Assembly assembly = Assembly.GetCallingAssembly();
+            var assembly = Assembly<string>(fileName);
             using (Stream stream = assembly.GetManifestResourceStream(fileName))
             {
                 if (stream == null)
@@ -166,14 +161,9 @@ namespace ProjectEuler.Resources
             }
         }
 
-        public static List<T> ReadEmbeddedFileAsList<T>(string fileName, Func<StreamReader, List<T>> myFunc)
+        public static T[,] ReadAsArray<T>(string fileName, Func<StreamReader, T[,]> myFunc)
         {
-            var resourceNames = Assembly.GetCallingAssembly().GetManifestResourceNames();
-            if (!resourceNames.Contains(fileName))
-                throw new ArgumentException(
-                    $"Could not resolve fileName {fileName} in the manifest Resources: {string.Join(",", resourceNames)}");
-
-            Assembly assembly = Assembly.GetCallingAssembly();
+            var assembly = Assembly<T>(fileName);
             using (Stream stream = assembly.GetManifestResourceStream(fileName))
             {
                 if (stream == null)
@@ -183,6 +173,31 @@ namespace ProjectEuler.Resources
                     return myFunc(reader);
                 }
             }
+        }
+
+        public static List<T> ReadEmbeddedFileAsList<T>(string fileName, Func<StreamReader, List<T>> myFunc)
+        {
+            var assembly = Assembly<T>(fileName);
+            using (Stream stream = assembly.GetManifestResourceStream(fileName))
+            {
+                if (stream == null)
+                    throw new ArgumentException($"Could not resolve fileName {fileName}");
+                using (var reader = new StreamReader(stream))
+                {
+                    return myFunc(reader);
+                }
+            }
+        }
+
+        private static Assembly Assembly<T>(string fileName)
+        {
+            var resourceNames = System.Reflection.Assembly.GetCallingAssembly().GetManifestResourceNames();
+            if (!resourceNames.Contains(fileName))
+                throw new ArgumentException(
+                    $"Could not resolve fileName {fileName} in the manifest Resources: {string.Join(",", resourceNames)}");
+
+            Assembly assembly = System.Reflection.Assembly.GetCallingAssembly();
+            return assembly;
         }
 
 
