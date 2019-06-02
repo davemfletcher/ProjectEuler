@@ -10,9 +10,6 @@ namespace ProjectEuler
         //protected Answer Answer { get; set; }
 
         public abstract Answer GetAnswer();
-        //public override string ToString()
-        //{
-        //    return Answer.Description;
-        //}
+ 
     }
 }
