@@ -55,7 +55,7 @@ namespace ProjectEuler.csharp
             const long limit = 600851475143;
             return new Answer
             {
-                Description = string.Format("{0}", SecondAttempt(limit))
+                Description = $"{SecondAttempt(limit)}"
             };
         }
     }

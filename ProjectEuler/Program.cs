@@ -22,7 +22,7 @@ namespace ProjectEuler
             
             #region Euler
 
-            //problem = new Problem01();
+            problem = new Problem01();
             //problem = new Problem02();
             //problem = new Problem03();
             //problem = new Problem04();

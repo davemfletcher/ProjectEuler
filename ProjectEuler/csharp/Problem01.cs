@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathNet.Numerics;
+using System.IO;
 using ProjectEuler.Resources;
 
 namespace ProjectEuler.csharp
@@ -47,7 +44,7 @@ namespace ProjectEuler.csharp
 
             return a + b - c;
         }
-
+        
 
         public Answer Solution()
         {
@@ -59,6 +56,34 @@ namespace ProjectEuler.csharp
             };
         }
 
+
+        public static int priceCheck(List<string> products, List<float> productPrices, List<string> productSold, List<float> soldPrice)
+        {
+            if (productSold == null || soldPrice == null)
+            {
+                return 0;
+            }
+
+            int errors = 0;
+            for(int i =0; i < productSold.Count;i++)
+            {
+                // compare the sold price to the listed price, we have to assume the price index matches the product indexes.
+                var soldItem = productSold[i];
+                var productIndex = products.IndexOf(soldItem);
+                if (productIndex == -1)
+                {
+                    // product not found
+                    // TODO should probably throw an exception, or log it. It can fall through and be included as an error for now.
+                }
+
+                if (Math.Abs(productPrices[productIndex] - soldPrice[i]) > 0.001)
+                {
+                    errors++;
+                }
+            }
+
+            return errors;
+        }
 
     }
 }

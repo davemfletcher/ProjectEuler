@@ -123,7 +123,12 @@ namespace ProjectEuler.Resources
             return PrimeNumbersBelowNumber(num).Where(prime => num%prime == 0).ToList();
         }
 
-        public static long[] FibnocciSequence(int max)
+        /// <summary>
+        /// Create a fibonacci sequence of max terms.
+        /// </summary>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public static long[] FibonacciSequence(int max)
         {
             int firstTerm = 1;
             int secondTerm = 2;

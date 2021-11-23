@@ -30,9 +30,9 @@ namespace ProjectEuler.csharp
         private long FirstAttempt()
         {
             const int size = 40;
-            var fib = Util.FibnocciSequence(size);
+            var fib = Util.FibonacciSequence(size);
             long total = 0;
-            for (int i = 2; i < size; i = i + 3)
+            for (int i = 2; i < size; i += 3)
             {
                 total += fib[i];
                 if (total >= Limit) break;
