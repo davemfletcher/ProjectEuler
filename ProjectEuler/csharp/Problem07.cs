@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ProjectEuler.Resources;
+using ProjEuler;
+using ProjEuler.Resources;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /* <see cref="https://projecteuler.net/problem=07"/> 
      * By listing the first six prime numbers: 2,3,5,7,11, and 13, we can see that the 6th prime is 13. What is the 1001st 
@@ -29,7 +30,7 @@ namespace ProjectEuler.csharp
         /// </summary>
         /// <param name="limit"></param>
         /// <returns></returns>
-        private long FirstAttempt(int limit=2)
+        private long FirstAttempt(int limit = 2)
         {
             var sieve = Util.PrimeNumbersBelowNumber((long)Math.Pow(limit, 2));
             return sieve[--limit];
@@ -41,7 +42,7 @@ namespace ProjectEuler.csharp
         /// </summary>
         /// <param name="limit"></param>
         /// <returns></returns>
-        private int SecondAttempt(int limit=2)
+        private int SecondAttempt(int limit = 2)
         {
             int nthPrime = 2;
             int num = 1;
@@ -57,7 +58,7 @@ namespace ProjectEuler.csharp
         public Answer Solution()
         {
             const int num = 10001;
-            return new Answer  
+            return new Answer
             {
                 Description = string.Format("total primes = {0} Answer {1}", num, SecondAttempt(num))
             };

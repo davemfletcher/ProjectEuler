@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectEuler.Resources;
+using ProjEuler.Resources;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// <see cref="https://projecteuler.net/problem=05"/> 
@@ -18,7 +18,7 @@ namespace ProjectEuler.csharp
     /// </summary>
     class Problem05 : IProblem
     {
-    
+
         /// <summary>
         /// Started with at k=10 (2520) a safe low number and moved up in 20 increments.  
         /// </summary>
@@ -38,7 +38,7 @@ namespace ProjectEuler.csharp
                         done = true;
                     }
 
-                    else if(num % i != 0)
+                    else if (num % i != 0)
                         break;
                 }
 
@@ -60,7 +60,7 @@ namespace ProjectEuler.csharp
         /// K=10 not needed 10 can already be calculated from K=9
         /// </summary>
         /// <returns></returns>
-        private long SecondAttempt(long N=20)
+        private long SecondAttempt(long N = 20)
         {
             // TOO damn hard
             return -1;
@@ -96,15 +96,15 @@ namespace ProjectEuler.csharp
                     }
                 }
             }
-            return primes.Zip(primeFactors, 
+            return primes.Zip(primeFactors,
                 (p, pf) => (long)Math.Pow(p, pf))
                 .Aggregate((a, b) => a * b);
         }
-  
+
 
         public Answer Solution()
         {
-//            int num = 232750000;
+            //            int num = 232750000;
             return new Answer
             {
                 Description = string.Format("{0}", FirstAttempt())

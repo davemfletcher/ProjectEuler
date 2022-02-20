@@ -5,9 +5,9 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectEuler.Resources;
+using ProjEuler.Resources;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// Max Path Sum I
@@ -104,9 +104,9 @@ namespace ProjectEuler.csharp
                 index = 0;
                 for (int j = 0; j < inputTriangle.GetLength(0) - 1; j++)
                 {
-                    var i1 = (i >> j & 1);
+                    var i1 = i >> j & 1;
                     index = index + i1;
-//                    Console.WriteLine($"i={i},({Convert.ToString(i,2)}), j={j}, i1={i1}, index{index}");
+                    //                    Console.WriteLine($"i={i},({Convert.ToString(i,2)}), j={j}, i1={i1}, index{index}");
 
                     var sum = inputTriangle[j + 1, index];
                     tempSum += sum;
@@ -120,7 +120,7 @@ namespace ProjectEuler.csharp
             return largestSum;
         }
 
-   
+
         private double FirstAttempt()
         {
             int[,] listArray = Util.ReadAsArray("ProjectEuler.Resources.PeData18.txt", _myFunc);
@@ -129,6 +129,6 @@ namespace ProjectEuler.csharp
             return TraverseTriangle(listArray);
         }
 
-  
+
     }
 }

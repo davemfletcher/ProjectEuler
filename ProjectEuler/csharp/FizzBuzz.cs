@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ProjEuler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// For FizzBuzz N=10,000,000
@@ -16,12 +17,12 @@ namespace ProjectEuler.csharp
     {
         private string FirstAttempt(int limit = 100)
         {
-            var output = new string[limit+1];
+            var output = new string[limit + 1];
             for (int i = 0; i <= limit; i++)
             {
                 var tmp = "";
                 if (i % 3 == 0 && i % 5 == 0)
-                    tmp ="FizzBuzz";
+                    tmp = "FizzBuzz";
                 else if (i % 3 == 0)
                     tmp = "Fizz";
                 else if (i % 5 == 0)
@@ -44,13 +45,13 @@ namespace ProjectEuler.csharp
             var output = new StringBuilder();
             Enumerable.Range(1, limit).ToList().ForEach(
                 n => output.AppendLine(
-                    (n % 15 == 0)
+                    n % 15 == 0
                         ? "FizzBuzz"
-                        : (
-                            (n % 3 == 0)
+                        :
+                            n % 3 == 0
                                 ? "Fizz"
-                                : (n % 5 == 0 ? "Buzz" : n.ToString())
-                        )
+                                : n % 5 == 0 ? "Buzz" : n.ToString()
+
                 )
             );
 

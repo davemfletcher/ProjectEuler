@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace ProjectEuler.Resources
+namespace ProjEuler.Resources
 {
     public static class Util
     {
@@ -16,17 +16,17 @@ namespace ProjectEuler.Resources
         /// <returns></returns>
         public static long Sum(long limit, long term)
         {
-            long numberOfTerms = limit / term ;
+            long numberOfTerms = limit / term;
             long t = term * numberOfTerms;
             long lastTerm = t;
-//            int lastTerm = t == limit ? limit - term : t;
+            //            int lastTerm = t == limit ? limit - term : t;
 
             return Sum(numberOfTerms, term, lastTerm);
         }
 
         public static long Sum(long numberOfTerms, long firstTerm, long lastTerm)
         {
-            return numberOfTerms*(firstTerm + lastTerm) / 2;
+            return numberOfTerms * (firstTerm + lastTerm) / 2;
         }
 
         /// <summary>
@@ -36,12 +36,12 @@ namespace ProjectEuler.Resources
         /// <returns></returns>
         public static long NthTriangle(long limit)
         {
-            return (limit * (limit + 1)) / 2;
+            return limit * (limit + 1) / 2;
         }
 
         public static double SumOfSquares(double num)
         {
-            double answer = num*(2*num + 1)*(num + 1)/6;
+            double answer = num * (2 * num + 1) * (num + 1) / 6;
             return answer;
         }
 
@@ -102,8 +102,8 @@ namespace ProjectEuler.Resources
         /// <returns></returns>
         public static IList<long> PrimeNumbersBelowNumber(long limit)
         {
-            bool[] es = EratosthenesSieve(limit-1);
-            
+            bool[] es = EratosthenesSieve(limit - 1);
+
             var pn = new List<long>();
             for (long i = 2; i < es.Length; i++)
             {
@@ -120,7 +120,7 @@ namespace ProjectEuler.Resources
         /// <returns></returns>
         public static IList<long> PrimeFactors(long num)
         {
-            return PrimeNumbersBelowNumber(num).Where(prime => num%prime == 0).ToList();
+            return PrimeNumbersBelowNumber(num).Where(prime => num % prime == 0).ToList();
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace ProjectEuler.Resources
         /// <param name="fileName">Name of the resource to read, with full namespace qualification</param>
         /// <param name="myFunc"></param>
         /// <returns>file content</returns>
-        public static string ReadEmbeddedFile(string fileName, Func<StreamReader, string> myFunc = null)
+        public static string ReadEmbeddedFile(string fileName, Func<StreamReader, string>? myFunc = null)
         {
             var assembly = Assembly<string>(fileName);
             using (Stream stream = assembly.GetManifestResourceStream(fileName))

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Linq;
-using ProjectEuler.Resources;
+using ProjEuler;
+using ProjEuler.Resources;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// <see cref="https://projecteuler.net/problem=03"/> 
@@ -28,12 +29,12 @@ namespace ProjectEuler.csharp
         /// <returns></returns>
         private long FirstAttempt(long num)
         {
-            for(long d = 2; d < Math.Sqrt(num); d++)
+            for (long d = 2; d < Math.Sqrt(num); d++)
                 while (num % d == 0)
                 {
                     num /= d;
                 }
-            
+
             return num;
         }
 
@@ -47,7 +48,7 @@ namespace ProjectEuler.csharp
         {
             var primeNumbers = Util.PrimeNumbersBelowNumber((int)Math.Sqrt(num)).Reverse();
 
-            return primeNumbers.FirstOrDefault(primeNumber => num%primeNumber == 0);
+            return primeNumbers.FirstOrDefault(primeNumber => num % primeNumber == 0);
         }
 
         public Answer Solution()

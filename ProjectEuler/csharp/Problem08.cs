@@ -1,7 +1,8 @@
-﻿using System;
+﻿using ProjEuler;
+using System;
 using System.Linq;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /** <see cref="https://projecteuler.net/problem=08"/> 
      * The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
@@ -23,7 +24,7 @@ namespace ProjectEuler.csharp
         /// </summary>
         /// <param name="limit"></param>
         /// <returns></returns>
-        private long FirstAttempt(int limit=13)
+        private long FirstAttempt(int limit = 13)
         {
             long highestScore = 0;
             long tally = 1;
@@ -32,7 +33,7 @@ namespace ProjectEuler.csharp
             {
                 for (int j = 0; j < limit; j++)
                 {
-                    tally *= source[j+i];
+                    tally *= source[j + i];
                     // if a zero is encountered reset and move to next iteration
                     if (tally == 0)
                     {
@@ -47,8 +48,8 @@ namespace ProjectEuler.csharp
 
             }
 
-//            source.ToList().ForEach(Console.WriteLine);
-//            Console.WriteLine("highest score " + highestScore + " - start pos - " + startPos + " - " + source[startPos] + source[startPos + 1] + source[startPos + 2] + source[startPos + 3] + source[startPos + 4] + source[startPos + 5] + source[startPos + 6] + source[startPos + 7] + source[startPos + 8] + source[startPos + 9]);
+            //            source.ToList().ForEach(Console.WriteLine);
+            //            Console.WriteLine("highest score " + highestScore + " - start pos - " + startPos + " - " + source[startPos] + source[startPos + 1] + source[startPos + 2] + source[startPos + 3] + source[startPos + 4] + source[startPos + 5] + source[startPos + 6] + source[startPos + 7] + source[startPos + 8] + source[startPos + 9]);
 
             return highestScore;
         }
@@ -58,10 +59,10 @@ namespace ProjectEuler.csharp
         /// </summary>
         /// <param name="digits"></param>
         /// <returns></returns>
-        private long SecondAttempt(int digits=13)
+        private long SecondAttempt(int digits = 13)
         {
             return (from i in Enumerable.Range(0, SourceString.Length - digits + 1)
-                    select (Enumerable.Range(i, digits).Select(n => Convert.ToInt64(SourceString[n] - '0')))
+                    select Enumerable.Range(i, digits).Select(n => Convert.ToInt64(SourceString[n] - '0'))
                      .Aggregate<long, long>(1, (c, n) => c * n)).Max();
         }
 
@@ -69,7 +70,7 @@ namespace ProjectEuler.csharp
         {
             return new Answer
             {
-                Description = (SecondAttempt(13)).ToString()
+                Description = SecondAttempt(13).ToString()
             };
         }
     }

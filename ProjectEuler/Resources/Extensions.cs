@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler.Resources
+namespace ProjEuler.Resources
 {
     public static class Extensions
     {
@@ -21,7 +21,7 @@ namespace ProjectEuler.Resources
 
         private static bool CheckIfPrime(long number)
         {
-            if ((number % 2) == 0)
+            if (number % 2 == 0)
                 return number == 2;
 
             var sqrt = (int)Math.Sqrt(number);

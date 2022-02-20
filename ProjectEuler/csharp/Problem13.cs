@@ -6,9 +6,9 @@ using System.Numerics;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectEuler.Resources;
+using ProjEuler.Resources;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// <see cref="https://projecteuler.net/problem=13"/>
@@ -44,5 +44,5 @@ namespace ProjectEuler.csharp
 
     }
 
-   
+
 }

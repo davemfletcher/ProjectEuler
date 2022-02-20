@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MathNet.Numerics;
-using ProjectEuler.Resources;
+using ProjEuler.Resources;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// <see cref="https://projecteuler.net/problem=02"/> 
@@ -54,9 +54,9 @@ namespace ProjectEuler.csharp
                 int fib = a + b;
                 a = b;
                 b = fib;
-                if (fib%2 == 0)
+                if (fib % 2 == 0)
                 {
-                    total += fib;        
+                    total += fib;
                 }
             }
             return total;
@@ -72,9 +72,9 @@ namespace ProjectEuler.csharp
         /// <returns></returns>
         private int UsingPhi()
         {
-            double thirdTerm = Math.Pow(Constants.GoldenRatio,3);
+            double thirdTerm = Math.Pow(Constants.GoldenRatio, 3);
             int total = 0;
-            for(double i=2; i<4000000; i=Math.Round(thirdTerm*i))
+            for (double i = 2; i < 4000000; i = Math.Round(thirdTerm * i))
             {
                 total += (int)i;
             }

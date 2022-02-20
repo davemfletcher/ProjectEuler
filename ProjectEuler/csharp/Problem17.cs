@@ -1,4 +1,4 @@
-﻿using ProjectEuler.Resources;
+﻿using ProjEuler.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Humanizer;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// If the numbers 1 to 5 are written out in words: one, two, three, four, five, then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
@@ -38,14 +38,14 @@ namespace ProjectEuler.csharp
         /// </summary>
         /// <param name="limit"></param>
         /// <returns></returns>
-        private double FirstAttempt(int limit=1000)
+        private double FirstAttempt(int limit = 1000)
         {
             double answer = 0;
             Enumerable.Range(1, limit).ToList().ForEach(
                 n =>
                 {
                     var word = n.ToWords();
-                    word = word.Replace("-", string.Empty).Replace(" ", String.Empty);
+                    word = word.Replace("-", string.Empty).Replace(" ", string.Empty);
                     answer += word.ToString().Length;
                 }
              );
@@ -58,14 +58,14 @@ namespace ProjectEuler.csharp
         /// </summary>
         /// <param name="limit"></param>
         /// <returns></returns>
-        private double SecondAttempt(int limit=1000)
+        private double SecondAttempt(int limit = 1000)
         {
             double answer = 0;
             Enumerable.Range(1, limit).ToList().ForEach(
                 n =>
                 {
-                    var word = NumberToWords((int) n);
-                    word = word.Replace("-", string.Empty).Replace(" ", String.Empty);
+                    var word = NumberToWords(n);
+                    word = word.Replace("-", string.Empty).Replace(" ", string.Empty);
                     answer += word.ToString().Length;
                 }
             );
@@ -82,19 +82,19 @@ namespace ProjectEuler.csharp
 
             string words = "";
 
-            if ((number / 1000000) > 0)
+            if (number / 1000000 > 0)
             {
                 words += NumberToWords(number / 1000000) + " million ";
                 number %= 1000000;
             }
 
-            if ((number / 1000) > 0)
+            if (number / 1000 > 0)
             {
                 words += NumberToWords(number / 1000) + " thousand ";
                 number %= 1000;
             }
 
-            if ((number / 100) > 0)
+            if (number / 100 > 0)
             {
                 words += NumberToWords(number / 100) + " hundred ";
                 number %= 100;
@@ -113,7 +113,7 @@ namespace ProjectEuler.csharp
                 else
                 {
                     words += tensMap[number / 10];
-                    if ((number % 10) > 0)
+                    if (number % 10 > 0)
                         words += "-" + unitsMap[number % 10];
                 }
             }

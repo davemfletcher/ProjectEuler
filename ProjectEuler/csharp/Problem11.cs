@@ -1,11 +1,12 @@
-﻿using System;
+﻿using ProjEuler;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// <see cref="https://projecteuler.net/problem=11"/>
@@ -69,7 +70,7 @@ namespace ProjectEuler.csharp
             };
         }
 
- 
+
 
         private long LeftToRightUp(int row)
         {
@@ -86,7 +87,7 @@ namespace ProjectEuler.csharp
                 if (sum > diagonalAnswer)
                     diagonalAnswer = sum;
             }
-            return diagonalAnswer;           
+            return diagonalAnswer;
         }
 
         private long LeftToRightDown(int row)
@@ -99,12 +100,12 @@ namespace ProjectEuler.csharp
                 var sum = 1;
                 for (int j = 0; j < 4; j++)
                 {
-                    sum *= _array[row+j, i+j];
+                    sum *= _array[row + j, i + j];
                 }
                 if (sum > diagonalAnswer)
                     diagonalAnswer = sum;
             }
-            return diagonalAnswer;          
+            return diagonalAnswer;
         }
 
         private long Vertical(int col)
@@ -131,11 +132,11 @@ namespace ProjectEuler.csharp
                 var sum = 1;
                 for (int j = 0; j < 4; j++)
                 {
-                    sum *= _array[row, i+j];
+                    sum *= _array[row, i + j];
                 }
                 if (sum > horizontalAnswer)
                     horizontalAnswer = sum;
-               
+
             }
             return horizontalAnswer;
         }

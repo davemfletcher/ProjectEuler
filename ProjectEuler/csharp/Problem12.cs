@@ -6,10 +6,10 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using MathNet.Numerics;
-using ProjectEuler;
-using ProjectEuler.Resources;
+using ProjEuler;
+using ProjEuler.Resources;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// <see cref="https://projecteuler.net/problem=12"/>
@@ -74,7 +74,7 @@ namespace ProjectEuler.csharp
             var sqrt = Math.Sqrt(num);
             for (int i = 1; i <= sqrt; i++)
             {
-                if (num%i == 0)
+                if (num % i == 0)
                     count += 2;
             }
             if (sqrt * sqrt == num)
@@ -94,7 +94,7 @@ namespace ProjectEuler.csharp
         {
             int triangleSum = 0;
             int triangleNth = 1;
-       
+
             var primes = Util.SieveOfEratosthenes(75000);
             while (PrimeFactorisationNoD(triangleSum, primes) <= limit)
             {
@@ -123,7 +123,7 @@ namespace ProjectEuler.csharp
             foreach (long prime in primelist)
             {
                 int exponent = 1;
-                while (remain%prime == 0)
+                while (remain % prime == 0)
                 {
                     exponent++;
                     remain /= prime;
@@ -135,7 +135,7 @@ namespace ProjectEuler.csharp
                     return nod;
             }
             return nod;
-            
+
         }
     }
 }

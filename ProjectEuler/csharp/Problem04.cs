@@ -1,6 +1,7 @@
-﻿using System.Linq;
+﻿using ProjEuler;
+using System.Linq;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// <see cref="https://projecteuler.net/problem=04"/> 
@@ -25,7 +26,7 @@ namespace ProjectEuler.csharp
             {
                 for (int j = 1000; j > 100; j--)
                 {
-                    int x = i*j;
+                    int x = i * j;
                     if (isPalindrome(x) && x > maxPalindrome)
                     {
                         maxPalindrome = x;
@@ -42,14 +43,14 @@ namespace ProjectEuler.csharp
 
             return !numChars.Where((t, i) => t != numChars[numChars.Length - 1 - i]).Any();
 
-//            Old way
-//            for (int i = 0; i < numChars.Length; i++)
-//            {
-//                if (numChars[i] != numChars[numChars.Length - 1 - i])
-//                    return false;
-//            }
-//            
-//            return true;
+            //            Old way
+            //            for (int i = 0; i < numChars.Length; i++)
+            //            {
+            //                if (numChars[i] != numChars[numChars.Length - 1 - i])
+            //                    return false;
+            //            }
+            //            
+            //            return true;
         }
 
         public Answer Solution()

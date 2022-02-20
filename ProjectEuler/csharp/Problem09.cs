@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /* <see cref="https://projecteuler.net/problem=09"/>
      * A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
@@ -33,16 +33,16 @@ namespace ProjectEuler.csharp
         {
             for (int a = 0; a < max; a++)
             {
-                for (int b = a+1; b < max; b++)
+                for (int b = a + 1; b < max; b++)
                 {
                     int c = max - a - b;
 
                     if (c <= b) break;
 
-                    if (a*a + b*b == c*c)
+                    if (a * a + b * b == c * c)
                     {
-//                        Console.WriteLine(string.Format("a:{0} b:{1} c:{2}",a,b,c));
-                        return a*b*c;
+                        //                        Console.WriteLine(string.Format("a:{0} b:{1} c:{2}",a,b,c));
+                        return a * b * c;
                     }
                 }
             }
@@ -80,14 +80,14 @@ namespace ProjectEuler.csharp
             if (!finished) return -1;
 
             //we know m and n, calculate a,b,c
-            var a = 2*m*n;
-            var b = (int) (Math.Pow(m, 2) - Math.Pow(n, 2));
-            var c = (int) (Math.Pow(m, 2) + Math.Pow(n, 2));
+            var a = 2 * m * n;
+            var b = (int)(Math.Pow(m, 2) - Math.Pow(n, 2));
+            var c = (int)(Math.Pow(m, 2) + Math.Pow(n, 2));
 
-            if((int)Math.Pow(a,2)+(int)Math.Pow(b,2) != (int)Math.Pow(c,2))
+            if ((int)Math.Pow(a, 2) + (int)Math.Pow(b, 2) != (int)Math.Pow(c, 2))
                 return -1;
 
-            return a*b*c;
+            return a * b * c;
         }
 
         public Answer Solution()

@@ -1,8 +1,9 @@
 ﻿
 using System;
-using ProjectEuler.Resources;
+using ProjEuler;
+using ProjEuler.Resources;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
 
     /// <summary>
@@ -33,7 +34,7 @@ namespace ProjectEuler.csharp
         /// <returns></returns>
         private long FirstAttempt(long limit = Limit)
         {
-            var squareOfSums = (long) Math.Pow(Util.NthTriangle(limit), 2);
+            var squareOfSums = (long)Math.Pow(Util.NthTriangle(limit), 2);
 
             long sumOfSquares = 0;
             for (long i = 0; i <= limit; i++)
@@ -41,7 +42,7 @@ namespace ProjectEuler.csharp
                 sumOfSquares += (long)Math.Pow(i, 2);
             }
 
-            return (long)(squareOfSums - sumOfSquares);
+            return squareOfSums - sumOfSquares;
         }
 
         /// <summary>
@@ -56,13 +57,13 @@ namespace ProjectEuler.csharp
             var squareOfSums = (long)Math.Pow(Util.NthTriangle(limit), 2);
             var sumOfSquares = SquareOfSums(limit);
 
-            return (long)(squareOfSums - sumOfSquares);
+            return squareOfSums - sumOfSquares;
         }
 
-        private long SquareOfSums(long n=Limit)
+        private long SquareOfSums(long n = Limit)
         {
             long result =
-                (n * (n + 1) * (2 * n + 1)) / 6;
+                n * (n + 1) * (2 * n + 1) / 6;
             return result;
         }
 
@@ -73,7 +74,7 @@ namespace ProjectEuler.csharp
                 Description = string.Format("{0}", SecondAttempt(1000000))
             };
         }
-            
+
 
     }
 

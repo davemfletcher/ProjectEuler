@@ -1,4 +1,4 @@
-﻿namespace ProjectEuler
+﻿namespace ProjEuler
 {
     public class Answer
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// <see cref="https://projecteuler.net/problem=15"/>
@@ -29,19 +29,19 @@ namespace ProjectEuler.csharp
         private double FirstAttempt(int gridSize = Grid)
         {
             //using grid points not squares.
-            long[,] grid = new long[gridSize+1, gridSize+1];
+            long[,] grid = new long[gridSize + 1, gridSize + 1];
 
-            for (int i=0; i< gridSize; i++)
+            for (int i = 0; i < gridSize; i++)
             {
                 grid[i, gridSize] = 1;
                 grid[gridSize, i] = 1;
             }
 
-            for(int i = gridSize - 1; i >= 0; i--)
+            for (int i = gridSize - 1; i >= 0; i--)
             {
-                for(int j = gridSize - 1; j >= 0; j--)
+                for (int j = gridSize - 1; j >= 0; j--)
                 {
-                    grid[i, j] = grid[i+1, j] + grid[i, j+1];
+                    grid[i, j] = grid[i + 1, j] + grid[i, j + 1];
                 }
             }
             return grid[0, 0];
@@ -57,17 +57,17 @@ namespace ProjectEuler.csharp
             long paths = 1;
 
             //todo use enumerable and aggregate - test??
-//            paths = Enumerable.Range(0, gridSize - 1).Aggregate(1, (total, next) =>
-//                (total / (2 * gridSize) - next) / next +1 );
+            //            paths = Enumerable.Range(0, gridSize - 1).Aggregate(1, (total, next) =>
+            //                (total / (2 * gridSize) - next) / next +1 );
 
-            for(int i=0; i< gridSize; i++)
+            for (int i = 0; i < gridSize; i++)
             {
-                paths *= (2 * gridSize) - i;
+                paths *= 2 * gridSize - i;
                 paths /= i + 1;
             }
             return paths;
 
         }
-        
+
     }
 }

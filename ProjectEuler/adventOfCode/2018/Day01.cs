@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Numerics;
-using ProjectEuler;
-using ProjectEuler.Resources;
+using ProjEuler;
+using ProjEuler.Resources;
 
 namespace ProjectEuler.adventOfCode._2018
 {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using ProjectEuler.Resources;
+using ProjEuler.Resources;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /// <summary>
     /// <see cref="https://projecteuler.net/problem=01"/> 
@@ -15,10 +15,10 @@ namespace ProjectEuler.csharp
     public class Problem01 : IProblem
     {
 
-        public long FirstAttempt(int num=999)
+        public long FirstAttempt(int num = 999)
         {
             long result = 0;
-            for (long i = 1; i <= num; i++ )
+            for (long i = 1; i <= num; i++)
             {
                 if (i % 3 == 0 || i % 5 == 0)
                     result += i;
@@ -27,16 +27,16 @@ namespace ProjectEuler.csharp
         }
 
 
-        private long SecondAttempt(int num=999)
+        private long SecondAttempt(int num = 999)
         {
             var a = Util.Sum(num, 3);
             var b = Util.Sum(num, 5);
             var c = Util.Sum(num, 15);
 
-            return (a + b) - c;
+            return a + b - c;
         }
 
-        public long Extra(int num=999)
+        public long Extra(int num = 999)
         {
             var a = Util.Sum(num, 6);
             var b = Util.Sum(num, 7);
@@ -44,7 +44,7 @@ namespace ProjectEuler.csharp
 
             return a + b - c;
         }
-        
+
 
         public Answer Solution()
         {
@@ -65,7 +65,7 @@ namespace ProjectEuler.csharp
             }
 
             int errors = 0;
-            for(int i =0; i < productSold.Count;i++)
+            for (int i = 0; i < productSold.Count; i++)
             {
                 // compare the sold price to the listed price, we have to assume the price index matches the product indexes.
                 var soldItem = productSold[i];

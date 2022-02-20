@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ProjectEuler.Resources;
+using ProjEuler.Resources;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
     /* <see cref="https://projecteuler.net/problem=10"/>
      *  The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
@@ -23,7 +23,7 @@ namespace ProjectEuler.csharp
         private long FirstAttempt(int max)
         {
             long sum = 2;
-            for (int i = 3; i < max; i+=2)
+            for (int i = 3; i < max; i += 2)
             {
                 if (i.IsPrime())
                     sum += i;
@@ -42,7 +42,7 @@ namespace ProjectEuler.csharp
             bool[] eratosthenesSieve = Util.EratosthenesSieve(max);
             long sum = 2;
 
-            for(int i = 3; i < eratosthenesSieve.Length; i+=2)
+            for (int i = 3; i < eratosthenesSieve.Length; i += 2)
             {
                 if (eratosthenesSieve[i])
                     sum += i;

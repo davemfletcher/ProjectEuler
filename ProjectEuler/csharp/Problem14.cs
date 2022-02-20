@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MathNet.Numerics;
+using ProjEuler;
 
-namespace ProjectEuler.csharp
+namespace ProjEuler.csharp
 {
 
     /* <see cref="https://projecteuler.net/problem=14"/>
@@ -35,7 +36,7 @@ namespace ProjectEuler.csharp
             return new Answer
             {
                 NumericAnswer = answer,
-                Description = "Largest number of term for Collatz problem: "+answer
+                Description = "Largest number of term for Collatz problem: " + answer
             };
         }
 
@@ -49,7 +50,7 @@ namespace ProjectEuler.csharp
             // 8949113 ticks
             var largestNumberOfTerms = 0;
             double numWithMostTerms = 0;
-            for (int i = 5; i < limit;  i++)
+            for (int i = 5; i < limit; i++)
             {
                 var terms = 1;
                 long v = i;
@@ -86,7 +87,7 @@ namespace ProjectEuler.csharp
                 long v = i;
                 while (v > 1)
                 {
-                    if(v < i)
+                    if (v < i)
                     {
                         terms += cache[v];
                         break;
@@ -94,7 +95,7 @@ namespace ProjectEuler.csharp
                     v = v % 2 == 0 ? v / 2 : checked(v * 3 + 1);
                     terms++;
                 }
-                cache[i] = terms; 
+                cache[i] = terms;
                 if (terms <= largestNumberOfTerms) continue;
                 largestNumberOfTerms = terms;
                 numWithMostTerms = i;
